@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
     CommonModule
   ],
   template: `
-    <section [ngClass]="['w-full h-[600px]', cssClass]">
+    <section [ngClass]="['w-full h-[700px]', cssClass]">
       Heavy Loader Slow
     </section>
   `
@@ -18,7 +18,7 @@ export class HeavyLoadersSlowComponent {
 
   constructor() {
     const start = Date.now();
-    while( Date.now() - start < 3500 ) { }
+    while( Date.now() - start < 3000 ) { }
 
     console.log('Heavy loader : Loaded!');
   }
