@@ -10,4 +10,20 @@
       <p>************</p>
     }
   </div>
+
+  <!-- ngSwitch @switch -->
+  <div class="bg-white rounded shadow p-10">
+    <pre>{{ grade() }}:</pre>
+    @switch (grade()) {
+      @case ('A') {
+        <p>90+</p>
+      }
+      @case ('A') {
+        <p>80+</p>
+      }
+      @default {
+        <p>Not approved</p>
+      }
+    }
+  </div>
 </section>
