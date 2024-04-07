@@ -1,17 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [
-    CommonModule,
-  ],
+  imports: [CommonModule],
   templateUrl: './control-flow.component.html',
-  styles: `
-    :host {
-      display: block;
-    }
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  styles: ``,
 })
-export default class ControlFlowComponent { }
+export default class ControlFlowComponent {
+  public showContent = signal(false);
+
+  public toggleContent() {
+    this.showContent.update((value) => !value);
+  }
+}
