@@ -2,15 +2,15 @@
 
 <ul>
   @for (user of usersService.users(); track user.id) {
-    <li class="flex items-center my-2 cursor-pointer hover:bg-gray-200 rounded p-5">
+    <a [routerLink]="['/dashboard/user', user.id]" class="flex items-center my-2 cursor-pointer hover:bg-gray-200 rounded p-5">
       <img
         class="rounded-full w-14"
         [srcset]="user.avatar"
         [alt]="user.first_name"
       />
-      <a [routerLink]="['/dashboard/user', user.id]" class="mx-5 hover:underline">
+      <span class="mx-5">
         {{ user.first_name }} {{ user.last_name }}
-      </a>
-    </li>
+      </span>
+    </a>
   }
 </ul>

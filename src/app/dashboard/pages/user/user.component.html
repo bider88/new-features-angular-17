@@ -1,1 +1,16 @@
-<p>user works!</p>
+<app-title [title]="'User info: ' + fullName()" />
+<section class="rounded shadow-xl p-5 w-full flex justify-center items-center flex-col">
+  @if (user()) {
+
+      <img
+        class="rounded-full mb-3"
+        [alt]="user()?.first_name"
+        [srcset]="user()?.avatar"
+      />
+      <h3 class="font-bold">{{ fullName() }}</h3>
+      <p>{{ user()?.email }}</p>
+
+  } @else {
+    <p class="font-bold">Loading...</p>
+  }
+</section>
